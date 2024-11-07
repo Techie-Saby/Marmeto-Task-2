@@ -92,7 +92,8 @@ The application uses the [Postal Pincode API](https://www.postalpincode.in/), wh
 This project is open-source and available under the [MIT License](LICENSE).
 
 
-**Thank you for using the Pincode Checker!**
-
-
 **Link**:https://techie-saby.github.io/Marmeto-Task-2/
+
+
+
+**Thank you for using the Pincode Checker!**
