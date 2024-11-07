@@ -1,0 +1,263 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Poppins, sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #4a403d;
+}
+
+.container {
+    background: white;
+    padding: 20px 40px;
+    border-radius: 12px;
+    width: 100%;
+    max-width: 500px;
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 10px;
+    font-size: 30px;
+}
+
+.description {
+    text-align: center;
+    color: #666;
+    margin-bottom: 20px;
+    font-size: 14px;
+}
+
+.form-group {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.form-control {
+    width: 100%;
+    height: 40px;
+    padding: 10px 16px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background: #f8f9fa;
+    transition: border-color 0.2s, background-color 0.2s;
+}
+
+.form-label {
+    position: absolute;
+    left: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 15px;
+    color: #666;
+    pointer-events: none;
+    transition: all 0.2s ease-out;
+    padding: 0 4px;
+    background-color: transparent;
+}
+
+.form-control:focus + .form-label,
+.form-control:not(:placeholder-shown) + .form-label {
+    top: 0;
+    transform: translateY(-50%) scale(0.85);
+    background-color: white;
+}
+
+.required {
+    color: #dc2626;
+    margin-left: 2px;
+}
+
+.checkbox-group {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    margin: 20px 0;
+}
+
+.checkbox-group input[type="checkbox"] {
+    margin-top: 4px;
+}
+
+.checkbox-group label {
+    font-size: 13px;
+    color: #333;
+    line-height: 1.4;
+}
+
+.submit-button {
+    width: 100%;
+    padding: 12px;
+    background-color: #dc2626;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.submit-button:hover {
+    background-color: #b91c1c;
+}
+
+button:disabled {
+    background: #dc2626;
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.loading {
+    display: inline-block;
+    width: 1rem;
+    height: 1rem;
+    border: 2px solid #fff;
+    border-radius: 50%;
+    border-top-color: transparent;
+    animation: spin 1s linear infinite;
+    margin-right: 0.5rem;
+}
+
+.email-icon {
+    position: absolute;
+    right: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #666;
+    cursor: pointer;
+}
+
+.address-window {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    max-width: 80%;
+    width: 300px;
+    max-height: 80vh;
+    overflow-y: auto;
+}
+
+.address-window h2 {
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+
+.address-window p {
+    margin-bottom: 5px;
+    font-size: 14px;
+}
+
+.close-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+#addressResult, #errorMessage {
+    margin-top: 10px;
+    font-size: 14px;
+}
+
+#addressResult {
+    color: #22c55e;
+}
+
+#errorMessage {
+    color: #dc2626;
+}
+
+.address-item {
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+}
+
+.address-item:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+    margin-bottom: 0;
+}
+
+@media (max-width: 600px) {
+    .container {
+        padding: 20px;
+        max-width: 100%;
+    }
+
+    h1 {
+        font-size: 24px;
+        margin-bottom: 8px;
+    }
+
+    .description {
+        font-size: 12px;
+    }
+
+    .form-control {
+        height: 35px;
+        font-size: 14px;
+    }
+
+    .form-label {
+        font-size: 13px;
+        left: 12px;
+    }
+
+    .submit-button {
+        padding: 10px;
+        font-size: 14px;
+    }
+
+    .address-window {
+        max-width: 90%;
+        width: 250px;
+    }
+
+    .address-window h2 {
+        font-size: 16px;
+    }
+
+    .address-window p {
+        font-size: 13px;
+    }
+
+    .close-button {
+        font-size: 18px;
+    }
+}
+

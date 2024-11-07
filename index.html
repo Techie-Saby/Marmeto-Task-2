@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pincode Checker</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Checkout</h1>
+        <p class="description">
+            The Pincode Checker is a simple tool that allows users to enter a pincode (postal code) to retrieve detailed location information associated with that code.
+        </p>
+        
+        <form id="checkoutForm">
+            <div class="form-group">
+                <input type="text" class="form-control" id="firstName" placeholder=" " required>
+                <label class="form-label" for="firstName">First name<span class="required">*</span></label>
+            </div>
+
+            <div class="form-group">
+                <input type="text" class="form-control" id="lastName" placeholder=" " required>
+                <label class="form-label" for="lastName">Last name<span class="required">*</span></label>
+            </div>
+
+            <div class="form-group">
+                <input type="email" class="form-control" id="email" placeholder=" " required>
+                <label class="form-label" for="email">E-mail<span class="required">*</span></label>
+                <span class="email-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-envelope-fill" viewBox="0 0 16 16">
+                    <path d="M.05 3.555A2 2 0 0 1 2 2h12a2 2 0 0 1 1.95 1.555L8 8.414zM0 4.697v7.104l5.803-3.558zM6.761 8.83l-6.57 4.027A2 2 0 0 0 2 14h12a2 2 0 0 0 1.808-1.144l-6.57-4.027L8 9.586zm3.436-.586L16 11.801V4.697z"/>
+                </svg></span>
+            </div>
+
+            <div class="form-group">
+                <input type="text" class="form-control" id="pincode" placeholder=" " required pattern="[0-9]*">
+                <label class="form-label" for="pincode">Pincode<span class="required">*</span></label>
+            </div>
+
+            <div class="checkbox-group">
+                <input type="checkbox" id="marketing">
+                <label for="marketing">
+                    Stay updated with our latest products, exclusive offers, and
+                    special promotions by opting in to receive marketing emails
+                    from us. You can unsubscribe at any time.
+                </label>
+            </div>
+
+            <button type="submit" id="submitButton" class="submit-button">Enter</button>
+            <p id="addressResult"></p>
+            <p id="errorMessage"></p>
+        </form>
+    </div>
+    <div class="overlay" id="overlay"></div>
+    <div class="address-window" id="addressWindow">
+        <h2>Address Information</h2>
+        <div id="addressContent"></div>
+        <button class="close-button" id="closeButton">&times;</button>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
